@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "krishtecdb";
-$password = "KRISHtec@57475747";
+$username = "root";
+$password = "root";
 $dbname = "ss_systems";
 
 // Create connection
