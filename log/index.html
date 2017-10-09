@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>Backend Logger</title>
+
+<head>
+		<link rel="stylesheet" type="text/css" href="csss/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="csss/demo.css" />
+		<link rel="stylesheet" type="text/css" href="csss/component.css" />
+		<script type="text/javascript" src="script/jquery-1.11.2.min.js"></script>
+		
+		<style>
+			table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+    width : 80px;
+}
+
+td {
+    height: 50px;
+    width : 80px;
+    vertical-align: bottom;
+}
+</style>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+	<header>
+		<h1>SS Systems <em>Realtime</em> <span>Backend Logger View</span></h1>	
+		
+	</header>
+
+	<div class="component">
+<div style="overflow-x:auto;">
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Time</th>
+			<th>solv</th>
+			<th>soli</th>
+			<th>batv</th>
+			<th>bati</th>
+			<th>temp</th>
+			<th>trip</th>
+			<th>loadp</th>
+			<th>solp</th>
+			<th>solu</th>
+			<th>solst</th>
+			<th>gridst</th>
+			<th>invst</th>
+			<th>batst</th>
+			<th>invv</th>
+			<th>opv</th>
+			<th>gridv</th>
+			<th>ipf</th>
+			<th>opf</th>
+		</tr>
+	</thead>
+</table>
+
+<p></p>
+</div>
+<script type="text/javascript">
+
+$(document).ready( function() {
+done();
+});
+
+function done() {
+  setTimeout( function() { 
+  updates(); 
+  done();
+  }, 1000);
+}
+
+function updates()  {
+
+	$.getJSON("fetch.php", function(data) {
+		$("p").empty();
+
+		$.each(data.result, function() {
+		$("p").append("<table><thead><tr><td><a1>"+this['ID']+"</a1></td><td><a2>"+this['time']+"</a2></td><td><a3>"+this['solv']+"</a3></td><td><a4>"+this['soli']+"</a4></td><td><a5>"+this['batv']+"</a5></td><td><a6>"+this['bati']+"</a6></td><td><a7>"+this['temp']+"</a7></td><td><a8>"+this['trip']+"</a8></td><td><a9>"+this['loadp']+"</a9></td><td><a10>"+this['solp']+"</a10></td><td><a11>"+this['solu']+"</a11></td><td><a12>"+this['solst']+"</a12></td><td><a13>"+this['gridst']+"</a13></td><td><a14>"+this['invst']+"</a14></td><td><a15>"+this['batst']+"</a15></td><td><a16>"+this['invv']+"</a16></td><td><a17>"+this['opv']+"</a17></td><td><a18>"+this['gridv']+"</a18>			  </td><td><a19>"+this['ipf']+"</a19></td><td><a20>"+this['opf']+"</a20></td></tr></thead></table>");
+		});
+	});
+}
+
+</script>
+</div>
+</div>
+</boby>
+</html>
