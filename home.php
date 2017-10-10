@@ -25,11 +25,11 @@
 
 
 <!--My Code-->
-                <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-                <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
 
 <!-- 2. Add the JavaScript to initialize the chart on document ready -->
-        <script>
+    <script>
         var chart; // global
         
         /**
@@ -38,7 +38,7 @@
          
         function requestData() {
             $.ajax({
-                url: 'scripts/ser.php', 
+                url: 'dao/dashboard.php', 
                 success: function(point) {
 
                     var series = chart.series[0],
@@ -131,7 +131,7 @@
                         }
                         else
                         {
-        			$("#bi").html(point[7]);
+        			        $("#bi").html(point[7]);
                         }
 
                         //Grid Status
@@ -215,58 +215,36 @@
 <body class="nav-md">
 
     <div class="container body"><!-- container body -->
-
-
         <div class="main_container"><!-- main_container -->
+            
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.php" class="site_title"><img src="images/ss1.jpg" height="50" width="50"> <span>SS Systems</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu prile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>Admin</h2>
+                        </div>
+                    </div>
+                    <!-- /menu prile quick info -->
+                    <br />
            
-            <?php include 'side_menu.php';?>
+                    <!-- sidebar menu -->
+                    <?php include 'side_menu.php';?>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
             
             <!-- top navigation -->
-            <div class="top_nav">
-
-                <div class="nav_menu">
-                    <nav class="" role="navigation">
-                        <div class="nav toggle">
-                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                        </div>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">Admin
-                                    <span class=" fa fa-angle-down"></span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="javascript:;">  Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Help</a>
-                                    </li>
-                                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
+            <?php include 'top_nav.php';?>
             <!-- /top navigation -->
-
 
             <!-- page content -->
             <div class="right_col" role="main">
@@ -380,7 +358,6 @@
 
                 <!-- top tiles -->
                 <div class="row tile_count">
-
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
                         <div class="right">
@@ -412,7 +389,6 @@
                             <div class="count green" id="ist"></div>
                         </div>
                     </div>
-
 
                     <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                         <div class="left"></div>
@@ -456,8 +432,8 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-
                 </div>
+                
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <!-- footer content -->
 
@@ -494,7 +470,6 @@
     <script src="js/custom.js"></script>
 
     <!-- flot js -->
-    <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
     <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
     <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
     <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>

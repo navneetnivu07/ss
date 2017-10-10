@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "krishtecdb";
-$password = "KRISHtec@57475747";
-$dbname = "ss_systems";
+$username = "root";
+$password = "root";
+$dbname = "solar_pcu";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

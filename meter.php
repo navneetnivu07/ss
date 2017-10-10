@@ -37,30 +37,29 @@
 
 <script type="text/javascript">
 
-$(document).ready( function() {
-done();
-});
+    $(document).ready( function() {
+    done();
+    });
 
-function done() {
-  setTimeout( function() { 
-  updates(); 
-  done();
-  }, 200);
-}
+    function done() {
+    setTimeout( function() { 
+    updates(); 
+    done();
+    }, 200);
+    }
 
-function updates()  {
-$.getJSON('scripts/meter.php', function(data) {
-    $("#sv").html(data[0]);
-    $("#bv").html(data[1]);
-    $("#gv").html(data[2]);
-    $("#iv").html(data[3]);
-    $("#ov").html(data[4]);
-    $("#loadp").html(data[5]);
+    function updates()  {
+    $.getJSON('dao/meter.php', function(data) {
+        $("#sv").html(data[0]);
+        $("#bv").html(data[1]);
+        $("#gv").html(data[2]);
+        $("#iv").html(data[3]);
+        $("#ov").html(data[4]);
+        $("#loadp").html(data[5]);
 
-//alert(data);
-});
-}
-
+    //alert(data);
+    });
+    }
 
 </script>
 
@@ -148,17 +147,14 @@ $.getJSON('scripts/meter.php', function(data) {
 <body class="nav-md">
 
     <div class="container body"><!-- container body -->
-
         <div class="main_container"><!-- main_container -->
-
+            
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><img src="images/ss1.jpg" height="50" width="50"> <span>SS Systems</span></a>
+                        <a href="index.php" class="site_title"><img src="images/ss1.jpg" height="50" width="50"> <span>SS Systems</span></a>
                     </div>
                     <div class="clearfix"></div>
-
                     <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
@@ -170,130 +166,25 @@ $.getJSON('scripts/meter.php', function(data) {
                         </div>
                     </div>
                     <!-- /menu prile quick info -->
-
                     <br />
-
+           
                     <!-- sidebar menu -->
-                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                        <div class="menu_section">
-                            <h3>General</h3>
-                            <ul class="nav side-menu">
-                                <li><a href="home.html"><i class="fa fa-home"></i> Home</a>
-                                </li>
-
-                                <li><a href="meter.html"><i class="fa fa-tachometer"></i> Meter</a>
-                                </li>
-
-                                <li><a href="tables_dynamic.html"><i class="fa fa-edit"></i> Logger</a>
-                                </li>
-
-                                <li><a><i class="fa fa-desktop"></i> Chart <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="multi.php">Power Chart</a>
-                                        </li>
-                                        <li><a href="unit.php">Unit Chart</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="money.html">Money Table</a>
-                                        </li>
-                                        <li><a href="trip_table.html">Trip Table</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Add-on <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="#">Feature</a>
-                                        </li>
-                                        <li><a href="#">Future</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php include 'side_menu.php';?>
                     <!-- /sidebar menu -->
-
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
-
-             <!-- top navigation -->
-            <div class="top_nav">
-
-                <div class="nav_menu">
-                    <nav class="" role="navigation">
-                        <div class="nav toggle">
-                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                        </div>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">Admin
-                                    <span class=" fa fa-angle-down"></span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="javascript:;">  Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">Help</a>
-                                    </li>
-                                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
+            
+            <!-- top navigation -->
+            <?php include 'top_nav.php';?>
             <!-- /top navigation -->
 
             <!-- page content -->
-            <div class="right_col" role="main">
-
-                
-
-                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="right_col" role="main">               
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">        
                         <div class="dashboard_graph">
-
                             <div class="row x_title">
-                                <div class="col-md-6">
+                                <div class="col-md-6"></div>
                                     <h3>Analog Meter <small>Voltage</small></h3>
                                 </div>
                                 <div class="col-md-6">
@@ -303,43 +194,17 @@ $.getJSON('scripts/meter.php', function(data) {
                                     </div>
                                 </div>
                             </div>
-                            
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div id="chart_div" style="width: 720px; height: 240px; margin-left:200px"></div>
                             </div>
-
-                              <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div id="chart_solv_div" style="width: 480px; height: 240px; margin-left:200px"></div>
                                 <svg id="fillgauge1" style="float:left;width:210px; height:210px;margin-left:690px; margin-top:-230px"></svg>
                             </div>
-
                             <div class="clearfix"></div>
                         </div>
                     </div>
-
                 </div>
-                
-                
-<script language="JavaScript">
-    var gauge1 = loadLiquidFillGauge("fillgauge1", 0);
-    var config1 = liquidFillGaugeDefaultSettings();
-    config1.circleColor = "#FF7777";
-    config1.textColor = "#FF4444";
-    config1.waveTextColor = "#FFAAAA";
-    config1.waveColor = "#FFDDDD";
-    config1.circleThickness = 0.2;
-    config1.textVertPosition = 0.2;
-    config1.waveAnimateTime = 1000;
-    
-    function NewValue(){
-    	var loadgauge = $("#loadp").html();
-    	return loadgauge;
-    }
-    
-    setInterval(function() {
-           gauge1.update(NewValue()); 
-        }, 1000);
-</script>
 
                 <!-- top tiles -->
                 <div class="row tile_count">
@@ -391,7 +256,6 @@ $.getJSON('scripts/meter.php', function(data) {
                 </div>
                 <!-- /top tiles -->
 
-
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <!-- footer content -->
 
@@ -417,6 +281,27 @@ $.getJSON('scripts/meter.php', function(data) {
         <div class="clearfix"></div>
         <div id="notif-group" class="tabbed_notifications"></div>
     </div>
+      
+    <script language="JavaScript">
+        var gauge1 = loadLiquidFillGauge("fillgauge1", 0);
+        var config1 = liquidFillGaugeDefaultSettings();
+        config1.circleColor = "#FF7777";
+        config1.textColor = "#FF4444";
+        config1.waveTextColor = "#FFAAAA";
+        config1.waveColor = "#FFDDDD";
+        config1.circleThickness = 0.2;
+        config1.textVertPosition = 0.2;
+        config1.waveAnimateTime = 1000;
+        
+        function NewValue(){
+            var loadgauge = $("#loadp").html();
+            return loadgauge;
+        }
+        
+        setInterval(function() {
+            gauge1.update(NewValue()); 
+        }, 1000);
+    </script>
 
   </body>
 </html>

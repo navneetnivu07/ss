@@ -2,7 +2,7 @@
 
     include 'connection.php';
 
-    $query = "SELECT * FROM thudiyalur_site order by ID DESC limit 1";
+    $query = "SELECT * FROM office_site order by ID DESC limit 1";
 
     $res = mysqli_query($conn,$query);
 

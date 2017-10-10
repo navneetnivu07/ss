@@ -27,32 +27,21 @@
     <script src="js/jquery.min.js"></script>
 
     <style>
-            .banner h2{
+        .banner h2{
             font-size:55px !important;
             color: green !important;
             font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 100;
-            }
+             font-weight: 100;
+        }
             
-            .banner h3{
+        .banner h3{
             font-size:55px !important;
             color: grey !important;
             font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 100;
+            font-weight: 100;
+        }
             
-            
-        </style>
-
-    <!--[if lt IE 9]>
-        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        <![endif]-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
+    </style>
 </head>
 
 <body style="background:#F7F7F7;">
@@ -94,7 +83,7 @@
                             <input type="password" class="form-control" placeholder="Password" required="" />
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="home.html">Log in</a>
+                            <a class="btn btn-default submit" href="home.php">Log in</a>
                             <a class="reset_pass" href="#">Lost your password?</a>
                         </div>
                         <div class="clearfix"></div>
