@@ -19,6 +19,9 @@
         <!-- Theme styling -->
 
         <link href="css/custom.css" rel="stylesheet">
+        <link href="css/maps/jquery-jvectormap-2.0.1.css" rel="stylesheet" type="text/css" />
+        <link href="css/icheck/flat/green.css" rel="stylesheet" />
+        <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
         <!-- 1. Add these JavaScript inclusions in the head of your page -->
         <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
@@ -180,29 +183,33 @@
 
             <!-- page content -->
             <div class="right_col" role="main">               
+                
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">        
                         <div class="dashboard_graph">
-                            <div class="row x_title">
-                                <div class="col-md-6"></div>
-                                    <h3>Analog Meter <small>Voltage</small></h3>
+                            
+                        <div class="row x_title">
+                            <div class="col-md-6">
+                                <h3>Analog Meter <small>Voltage</small></h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    <span id="dat"></span> <b class="caret"></b>
                                 </div>
-                                <div class="col-md-6">
-                                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                        <span id="dat"></span> <b class="caret"></b>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div id="chart_div" style="width: 720px; height: 240px; margin-left:200px"></div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div id="chart_solv_div" style="width: 480px; height: 240px; margin-left:200px"></div>
-                                <svg id="fillgauge1" style="float:left;width:210px; height:210px;margin-left:690px; margin-top:-230px"></svg>
-                            </div>
-                            <div class="clearfix"></div>
                         </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div id="chart_div" style="width: 720px; height: 240px; margin-left:200px"></div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div id="chart_solv_div" style="width: 480px; height: 240px; margin-left:200px"></div>
+                            <svg id="fillgauge1" style="float:left;width:210px; height:210px;margin-left:690px; margin-top:-230px"></svg>
+                        </div>
+                        
+                        <div class="clearfix"></div>
                     </div>
                 </div>
 

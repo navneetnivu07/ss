@@ -86,12 +86,7 @@
 
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -102,11 +97,13 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Filter By Date
-                                    <small>
-                                    <input type="text" id="min" name="min" placeholder="Start Date">
-                                    <input type="text" id="max" name="max" placeholder="End Date">
-                                    </small>
+                                    <h2>
+                                    <form class="form-inline">
+                                        Filter By Date
+                                        <input type="date" class="form-control" id="startDate" placeholder="Start Date">
+                                        <input type="date" class="form-control" id="endDate" placeholder="End Date">
+                                        <input class="btn btn-default" type="button" value="Go!">
+                                    </form>
                                     </h2>
                                     
                                     <ul class="nav navbar-right panel_toolbox">
@@ -128,14 +125,24 @@
                                 </div>
 
                                 <div class="x_content">
-                                    <table id="searchResultsTbl" class="table table-striped" data-search="true" data-show-columns="true" data-show-export="true" data-pagination="true" data-id-field="id" data-click-to-select="true" data-toolbar="#toolbar" data-page-list="[10, 25, 50, 100, ALL]" data-unique-id="id">
+                                    <table id="searchResultsTbl" 
+                                            class="table table-striped" 
+                                            data-search="true" 
+                                            data-show-columns="true" 
+                                            data-show-export="true" 
+                                            data-pagination="true" 
+                                            data-id-field="id" 
+                                            data-click-to-select="true" 
+                                            data-toolbar="#toolbar" 
+                                            data-page-list="[10, 25, 50, 100, ALL]" 
+                                            data-unique-id="id">
                                         <thead>
                                             <tr>
                                                 <th data-field="id" data-align="left" data-sortable="true">id</th>
-                                                <th data-field="time" data-align="left">Time</th>
-                                                <th data-field="solv" data-sortable="true">Solar Voltage</th>
+                                                <th data-field="time" data-align="left" data-sortable="true">Date and Time</th>
+                                                <th data-field="solv" data-sortable="true" data-sortable="true">Solar Voltage</th>
                                                 <th data-field="soli" data-align="left" data-sortable="true">Solar Current</th>
-                                                <th data-field="batv">Battery Voltage</th>
+                                                <th data-field="batv" data-align="left">Battery Voltage</th>
                                                 <th data-field="bati" data-align="left">Battery Current</th>
                                                 <th data-field="temp" data-align="left">Temperature</th>
                                                 <th data-field="trip" data-align="left">Trip</th>
@@ -204,7 +211,6 @@
     
     function getData() {
         $.getJSON('dao/ser_processing.php', function(response) {
-            console.log(response.data);
             $("#searchResultsTbl").bootstrapTable({
                 data: response.data
             });

@@ -37,7 +37,7 @@ $columns = array(
 
 	array( 'db' => 'time',  'dt' => 1,
 		   'formatter' => function( $d, $row ) {
-			return date( 'd/m/Y', strtotime($d));
+			return date( 'd/m/Y h:i:s A', strtotime($d));
 		}
 	)
 	
