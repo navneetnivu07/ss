@@ -132,7 +132,7 @@
                             <div>
                                 <h1><i class="fa" style="font-size: 26px;"></i> SS Systems</h1>
 
-                                <p>©2016 All Rights Reserved. Krish Tec! Solar MPPT Monitoring System. Privacy and Terms</p>
+                                <p>©2017 All Rights Reserved. Krish Tec! Solar MPPT Monitoring System. Privacy and Terms</p>
                             </div>
                         </div>
                     </form>

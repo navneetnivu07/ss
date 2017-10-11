@@ -146,7 +146,7 @@ $(document).ready(function() {
 		"processing": true,
 		"serverSide": true,
 		"ajax": $.fn.dataTable.pipeline( {
-			url: 'scripts/server_processing.php',
+			url: 'dao/server_processing.php',
 			pages: 5 // number of pages to cache
 		} )
 	} );
